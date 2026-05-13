@@ -23,7 +23,704 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Johari Solomon | Full Stack Developer</title>
+
+  <meta name="description"
+    content="Johari Solomon - Junior Full Stack Developer skilled in React, Firebase, Kotlin, JavaScript, Python/Django, HTML, CSS and Bootstrap.">
+  <meta name="keywords"
+    content="Johari Solomon, Full Stack Developer, React Developer, Firebase Developer, Android Developer, Portfolio">
+
+  <!-- Favicons -->
+  <link href="assets/img/fav.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f172a;
+      color: white;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .header {
+      background: rgba(15, 23, 42, 0.95);
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .navmenu ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navmenu a {
+      color: white;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .navmenu a:hover,
+    .navmenu .active {
+      color: #38bdf8;
+    }
+
+    .hero {
+      padding: 120px 0 80px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .highlight {
+      color: #38bdf8;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero h2 {
+      margin-top: 20px;
+      font-size: 30px;
+      color: #cbd5e1;
+    }
+
+    .hero p {
+      margin-top: 25px;
+      color: #94a3b8;
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .btn-primary-custom {
+      background: #38bdf8;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 12px;
+      border: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-primary-custom:hover {
+      background: #0ea5e9;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline-custom {
+      border: 2px solid #38bdf8;
+      color: #38bdf8;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-outline-custom:hover {
+      background: #38bdf8;
+      color: white;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 15px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .social-links {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 24px;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #38bdf8;
+      transform: translateY(-5px);
+    }
+
+    .hero-image img {
+      border-radius: 25px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 40px;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    .section-title p {
+      color: #94a3b8;
+    }
+
+    .skills {
+      padding: 100px 0;
+    }
+
+    .skill-box {
+      background: #1e293b;
+      padding: 35px 20px;
+      border-radius: 20px;
+      text-align: center;
+      transition: 0.3s ease;
+      height: 100%;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-10px);
+      background: #334155;
+    }
+
+    .skill-box i {
+      font-size: 45px;
+      color: #38bdf8;
+      margin-bottom: 15px;
+    }
+
+    .skill-box h5 {
+      font-weight: 600;
+    }
+
+    .projects {
+      padding: 100px 0;
+    }
+
+    .project-card {
+      background: #1e293b;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.3s;
+      height: 100%;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-content h4 {
+      color: #38bdf8;
+      font-weight: 700;
+    }
+
+    .project-content p {
+      color: #cbd5e1;
+    }
+
+    .tech-stack {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .tech-stack span {
+      background: #0f172a;
+      padding: 7px 14px;
+      border-radius: 30px;
+      font-size: 14px;
+      color: #38bdf8;
+    }
+
+    .about {
+      padding: 100px 0;
+    }
+
+    .about p {
+      color: #cbd5e1;
+      line-height: 2;
+      font-size: 17px;
+    }
+
+    .github-section {
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .github-section img {
+      border-radius: 20px;
+      margin-bottom: 20px;
+      max-width: 100%;
+    }
+
+    .footer {
+      background: #020617;
+      padding: 40px 0;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .footer p {
+      color: #94a3b8;
+      margin-bottom: 10px;
+    }
+
+    @media(max-width: 768px) {
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero h2 {
+        font-size: 24px;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header fixed-top">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <h3 class="m-0">Johari.</h3>
+
+      <nav class="navmenu">
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="row align-items-center gy-5">
+
+        <div class="col-lg-6" data-aos="fade-right">
+
+          <h1>
+            Hello, I'm <span class="highlight">Johari Solomon</span>
+          </h1>
+
+          <h2>
+            Junior Full Stack Developer
+          </h2>
+
+          <p>
+            Passionate Full Stack Developer with hands-on experience building responsive
+            web and mobile applications using React, Firebase, JavaScript, Kotlin,
+            Python/Django, HTML, CSS and Bootstrap.
+            Recently completed Full Stack Software Development training at eMobilis
+            Technology Training Institute and currently seeking internship opportunities.
+          </p>
+
+          <div class="hero-actions">
+
+            <a href="#projects" class="btn-primary-custom">
+              View Projects
+            </a>
+
+            <a href="assets/Johari-Solomon-CV.pdf"
+              download
+              class="btn-outline-custom">
+              Download CV
+            </a>
+
+          </div>
+
+          <div class="social-links">
+
+            <a href="https://github.com/Mansolo-21" target="_blank">
+              <i class="bi bi-github"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/johari-solomon/" target="_blank">
+              <i class="bi bi-linkedin"></i>
+            </a>
+
+            <a href="https://x.com/jojo32362" target="_blank">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-6 text-center" data-aos="fade-left">
+
+          <div class="hero-image">
+            <img src="assets/img/Screenshot_20260105-083321_Photos.jpg"
+              class="img-fluid"
+              alt="Johari Solomon">
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="skills">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Technical Skills</h2>
+        <p>Technologies and tools I use to build modern applications.</p>
+      </div>
+
+      <div class="row gy-4">
+
+        <div class="col-md-3 col-6">
+          <div class="skill-box">
+            <i class="bi bi-filetype-html"></i>
+            <h5>HTML5</h5>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+          <div class="skill-box">
+            <i class="bi bi-filetype-css"></i>
+            <h5>CSS3</h5>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+          <div class="skill-box">
+            <i class="bi bi-filetype-js"></i>
+            <h5>JavaScript</h5>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+          <div class="skill-box">
+            <i class="bi bi-bootstrap"></i>
+            <h5>Bootstrap</h5>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+          <div class="skill-box">
+            <i class="bi bi-code-slash"></i>
+            <h5>React</h5>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+          <div class="skill-box">
+            <i class="bi bi-fire"></i>
+            <h5>Firebase</h5>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+          <div class="skill-box">
+            <i class="bi bi-database"></i>
+            <h5>MySQL</h5>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+          <div class="skill-box">
+            <i class="bi bi-github"></i>
+            <h5>GitHub</h5>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="projects">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Featured Projects</h2>
+        <p>Projects demonstrating my full stack and mobile development skills.</p>
+      </div>
+
+      <div class="row gy-4">
+
+        <!-- Project 1 -->
+        <div class="col-lg-4">
+
+          <div class="project-card">
+
+            <img src="assets/img/project1.jpg" alt="Project">
+
+            <div class="project-content">
+
+              <h4>Campus Hub App</h4>
+
+              <p>
+                Full stack campus management application featuring authentication,
+                announcements, events, and Firebase integration.
+              </p>
+
+              <div class="tech-stack">
+                <span>Kotlin</span>
+                <span>Firebase</span>
+                <span>Jetpack Compose</span>
+              </div>
+
+              <a href="https://github.com/Mansolo-21"
+                class="btn btn-primary">
+                GitHub
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-lg-4">
+
+          <div class="project-card">
+
+            <img src="assets/img/project2.jpg" alt="Project">
+
+            <div class="project-content">
+
+              <h4>E-Commerce Website</h4>
+
+              <p>
+                Responsive e-commerce website with authentication,
+                shopping cart and Firebase backend support.
+              </p>
+
+              <div class="tech-stack">
+                <span>React</span>
+                <span>Firebase</span>
+                <span>Bootstrap</span>
+              </div>
+
+              <a href="https://github.com/Mansolo-21"
+                class="btn btn-primary">
+                GitHub
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-lg-4">
+
+          <div class="project-card">
+
+            <img src="assets/img/project3.jpg" alt="Project">
+
+            <div class="project-content">
+
+              <h4>Portfolio Website</h4>
+
+              <p>
+                Modern responsive portfolio website showcasing projects,
+                technical skills and software development experience.
+              </p>
+
+              <div class="tech-stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+
+              <a href="https://github.com/Mansolo-21"
+                class="btn btn-primary">
+                GitHub
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>About Me</h2>
+      </div>
+
+      <div class="row justify-content-center">
+
+        <div class="col-lg-9">
+
+          <p>
+            I am a passionate Junior Full Stack Developer with experience building
+            responsive web and mobile applications. I recently completed Full Stack
+            Software Development training at eMobilis Technology Training Institute,
+            where I gained hands-on experience in frontend development, backend
+            development, databases, Firebase integration, API handling, and version
+            control using Git and GitHub.
+          </p>
+
+          <p>
+            I enjoy solving problems, learning new technologies, and creating modern,
+            user-friendly applications. Currently, I am seeking internship opportunities
+            where I can contribute, grow my skills, and gain real-world software
+            development experience.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- GitHub -->
+  <section class="github-section">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>GitHub Activity</h2>
+      </div>
+
+      <img
+        src="https://github-readme-stats.vercel.app/api?username=Mansolo-21&show_icons=true&theme=tokyonight"
+        alt="GitHub Stats">
+
+      <img
+        src="https://github-readme-stats.vercel.app/api/top-langs/?username=Mansolo-21&layout=compact&theme=tokyonight"
+        alt="Top Languages">
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+
+    <div class="container">
+
+      <h3>Johari Solomon</h3>
+
+      <p>Junior Full Stack Developer</p>
+
+      <p>Email: joharisolomon@example.com</p>
+
+      <p>Location: Nairobi, Kenya</p>
+
+      <div class="social-links justify-content-center">
+
+        <a href="https://github.com/Mansolo-21">
+          <i class="bi bi-github"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/johari-solomon/">
+          <i class="bi bi-linkedin"></i>
+        </a>
+
+        <a href="https://x.com/jojo32362">
+          <i class="bi bi-twitter-x"></i>
+        </a>
+
+      </div>
+
+      <p class="mt-4">
+        © 2026 Johari Solomon. All Rights Reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <!-- Vendor JS -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+</body>
+
+</html>
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
