@@ -48,13 +48,13 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html"class="active">Contact</a></li>
+      </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
@@ -121,45 +121,74 @@
     </div>
 
 
-          <div class="col-lg-7">
-  <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
-    <h3>Get In Touch</h3>
-    <p>Send a message using the form below and I’ll respond as soon as possible. Whether it’s a project, question, or collaboration, I’m happy to connect.</p>
+         <div class="col-lg-7">
+            <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
 
+              <h3>Get In Touch</h3>
+
+              <p>
+                Send a message using the form below and I'll respond as soon as possible.
+                Whether it's a project, question, or collaboration, I'm happy to connect.
+              </p>
 
               <form action="https://formsubmit.co/solomonjohari@gmail.com"
-      method="POST"
-      class="php-email-form">
-                
-                <div class="row gy-4">
-                  <input type="hidden" name="_captcha" value="false">
+                    method="POST">
 
-<input type="hidden"
-       name="_next"
-       value="https://google.com"
+                <!-- FormSubmit Settings -->
+                <input type="hidden" name="_captcha" value="false">
+
+                <input type="hidden"
+                      name="_next"
+                      value="http://localhost:63342/PORTFOLIO/contact.html?success=true">
+
+                <div class="row gy-4">
 
                   <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      placeholder="Your Name"
+                      required>
                   </div>
 
-                  <div class="col-md-6 ">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  <div class="col-md-6">
+                    <input
+                      type="email"
+                      name="email"
+                      class="form-control"
+                      placeholder="Your Email"
+                      required>
                   </div>
 
                   <div class="col-12">
-                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                    <input
+                      type="text"
+                      name="subject"
+                      class="form-control"
+                      placeholder="Subject"
+                      required>
                   </div>
 
                   <div class="col-12">
-                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                    <textarea
+                      class="form-control"
+                      name="message"
+                      rows="6"
+                      placeholder="Message"
+                      required></textarea>
                   </div>
 
-                
+                  <div class="col-12 text-center">
 
-                    <button type="submit" class="btn">Send Message</button>
+                    <button type="submit" class="btn btn-secondary px-4 py-2">
+                      Send Message
+                    </button>
+
                   </div>
 
                 </div>
+
               </form>
 
             </div>
@@ -173,30 +202,44 @@
 
   </main>
 
-<footer id="footer" class="footer">
+  <!-- FOOTER -->
+  <footer id="footer" class="footer">
 
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">FolioOne</strong> <span>All Rights Reserved<br></span></p>
+
+      <div class="copyright text-center">
+
+        <p>
+          © <strong>Johari Solomon</strong>
+          | All Rights Reserved
+        </p>
+
       </div>
+
       <div class="social-links d-flex justify-content-center">
-        <a href="https://x.com/jojo32362"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61585640392839"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/mansolo1819/"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/johari-solomon/"><i class="bi bi-linkedin"></i></a>
+
+        <a href="https://x.com/jojo32362">
+          <i class="bi bi-twitter-x"></i>
+        </a>
+
+        <a href="https://www.instagram.com/mansolo350/">
+          <i class="bi bi-instagram"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/johari-solomon/">
+          <i class="bi bi-linkedin"></i>
+        </a>
+
+        <a href="https://github.com/Mansolo-21">
+          <i class="bi bi-github"></i>
+        </a>
+
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
-      </div>
+
     </div>
 
   </footer>
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -215,7 +258,12 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+<script>
+AOS.init({
+ duration:1000,
+ once:true
+});
+</script>
 </body>
 
 </html>
