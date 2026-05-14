@@ -131,26 +131,61 @@
       Whether it's a project, question, or collaboration, I'm happy to connect.
     </p>
 
-    <form
-  name="contact"
-  method="POST"
-  data-netlify="true"
-  data-netlify-honeypot="bot-field">
+   <form
+  action="https://formspree.io/f/meenbaro"
+  method="POST">
 
-  <input type="hidden" name="form-name" value="contact">
+  <div class="row gy-4">
 
-  <p hidden>
-    <label>Don’t fill this out:
-      <input name="bot-field">
-    </label>
-  </p>
+    <div class="col-md-6">
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        placeholder="Your Name"
+        required>
+    </div>
 
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <input type="text" name="subject" placeholder="Subject" required>
-  <textarea name="message" rows="6" placeholder="Message" required></textarea>
+    <div class="col-md-6">
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        placeholder="Your Email"
+        required>
+    </div>
 
-  <button type="submit">Send Message</button>
+    <div class="col-12">
+      <input
+        type="text"
+        name="subject"
+        class="form-control"
+        placeholder="Subject"
+        required>
+    </div>
+
+    <div class="col-12">
+      <textarea
+        class="form-control"
+        name="message"
+        rows="6"
+        placeholder="Message"
+        required></textarea>
+    </div>
+
+    <!-- Optional: email subject -->
+    <input type="hidden" name="_subject"
+           value="New Portfolio Contact Message">
+
+    <div class="col-12 text-center">
+      <button
+        type="submit"
+        class="btn btn-primary px-4 py-2">
+        Send Message
+      </button>
+    </div>
+
+  </div>
 </form>
     
 
